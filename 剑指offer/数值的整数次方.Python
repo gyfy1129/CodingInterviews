@@ -1,8 +1,22 @@
 # -*- coding:utf-8 -*-
 class Solution:
     def Power(self, base, exponent):
+        temp = base
+        if exponent > 0:
+           for i in range(1,exponent):
+              base = base * temp
+           return base
+        if  exponent == 0:
+            return 1
+        if exponent < 0:
+            exponent = -exponent
+            for i in range(1,exponent):
+                base = base * temp
+
+            return 1/float(base)
+
 
 
 if __name__ == '__main__':
     bat = Solution()
-    bat.Power()
+    print  bat.Power(0,1)
